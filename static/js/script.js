@@ -5,7 +5,8 @@ const preview = document.getElementById("preview");
 inputElement.addEventListener("change",handleFiles,false);
 
 function handleFiles() {
-    // https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications
+    // Take the files selected by the user and display them in the page if they are images.
+    // Adapted from: https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications
     const fileList = this.files;
     
     for (let i=0, numFiles=fileList.length; i < numFiles; i++) {
@@ -16,7 +17,6 @@ function handleFiles() {
         
         // adds <img class="obj"> to preview div
         const img = document.createElement("img");
-        // add obj as a class to the img element
         img.classList.add('obj');
         // add a file attribute to each img object so that the file 
         // object can be easily retrieved later
